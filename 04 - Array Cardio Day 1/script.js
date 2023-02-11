@@ -79,7 +79,25 @@ console.log(blvddelist);
 
 // 7. sort Exercise
 // Sort the people alphabetically by last name
+const peoplesorted = people.sort((a,b) => {
+    let surnamea = a.split(', ')[0];
+    let surnameb = b.split(', ')[0];
+
+    return surnamea > surnameb ? 1 : -1;
+});
+
+console.table(peoplesorted);
 
 // 8. Reduce Exercise
 // Sum up the instances of each of these
 const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
+
+const summeddata = data.reduce((obj, item) => {
+    if (!obj[item]) {
+        obj[item] = 0;
+    }
+    obj[item]++;
+    return obj;
+},{});
+
+console.table(summeddata);
